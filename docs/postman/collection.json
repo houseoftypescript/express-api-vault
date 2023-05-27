@@ -1,0 +1,155 @@
+{
+  "item": [
+    {
+      "name": "secrets",
+      "description": "",
+      "item": [
+        {
+          "name": "{key}",
+          "description": "",
+          "item": [
+            {
+              "id": "3644b45f-148c-4de3-9a40-4fed6997a409",
+              "name": "Get Secret",
+              "request": {
+                "name": "Get Secret",
+                "description": {},
+                "url": {
+                  "path": ["secrets", ":key"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": [{ "type": "any", "value": "<string>", "key": "key", "disabled": false }]
+                },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {},
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "bd2d5e10-c63d-45ba-9a2b-2ba18d3d87e6",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "url": { "path": ["secrets", ":key"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                    "header": [{ "key": "Accept", "value": "application/json" }],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "body": "{\n  \"value\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": { "disableBodyPruning": true }
+            },
+            {
+              "id": "89d35fda-907d-42bb-a201-da2085307b86",
+              "name": "Set Secret",
+              "request": {
+                "name": "Set Secret",
+                "description": {},
+                "url": {
+                  "path": ["secrets", ":key"],
+                  "host": ["{{baseUrl}}"],
+                  "query": [],
+                  "variable": [{ "type": "any", "value": "<string>", "key": "key", "disabled": false }]
+                },
+                "header": [
+                  { "key": "Content-Type", "value": "application/json" },
+                  { "key": "Accept", "value": "application/json" }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"value\": {}\n}",
+                  "options": { "raw": { "headerFamily": "json", "language": "json" } }
+                },
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "69ad00d7-8a74-4a25-b777-7b283288add3",
+                  "name": "Ok",
+                  "originalRequest": {
+                    "url": { "path": ["secrets", ":key"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                    "header": [
+                      { "key": "Content-Type", "value": "application/json" },
+                      { "key": "Accept", "value": "application/json" }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"value\": {}\n}",
+                      "options": { "raw": { "headerFamily": "json", "language": "json" } }
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "body": "<boolean>",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": { "disableBodyPruning": true }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "health",
+      "description": "",
+      "item": [
+        {
+          "id": "669c2ecd-a775-4de5-9ef8-7a4fb6b2cc61",
+          "name": "Get Health",
+          "request": {
+            "name": "Get Health",
+            "description": {},
+            "url": { "path": ["health"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "body": {},
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "76c3174a-2918-4b81-8cec-a66f12f6294a",
+              "name": "Health Check",
+              "originalRequest": {
+                "url": { "path": ["health"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+                "header": [{ "key": "Accept", "value": "application/json" }],
+                "method": "GET",
+                "body": {}
+              },
+              "code": 0,
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"status\": \"OK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": { "disableBodyPruning": true }
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:8080" }],
+  "info": {
+    "_postman_id": "cdae73de-6df0-47c6-addf-654297a459eb",
+    "name": "@express/vault",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "express.js - vault\n\nContact Support:\n Name: hieudoanm \n Email: hieumdoan@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
