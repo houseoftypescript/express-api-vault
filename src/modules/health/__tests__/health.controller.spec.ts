@@ -5,7 +5,7 @@ describe('HealthController', () => {
 
   describe('/health', () => {
     it('should return status OK', async () => {
-      const response = healthController.getHealth();
+      const response = await healthController.getHealth();
       expect(response).toEqual({ status: 'OK' });
     });
   });

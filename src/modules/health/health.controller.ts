@@ -1,12 +1,20 @@
 import { Controller, Get, Route, SuccessResponse, Tags } from 'tsoa';
-import { healthService } from './health.service';
+import { HealthService } from './health.service';
+import { HealthResponse } from './health.types';
 
 @Route('/health')
 @Tags('Health')
 export class HealthController extends Controller {
+  private healthService: HealthService;
+
+  constructor() {
+    super();
+    this.healthService = new HealthService();
+  }
+
   @SuccessResponse('Health Check', 'Health Check')
   @Get()
-  async getHealth(): Promise<{ status: 'OK' }> {
-    return healthService.getHealth();
+  getHealth(): HealthResponse {
+    return this.healthService.getHealth();
   }
 }
